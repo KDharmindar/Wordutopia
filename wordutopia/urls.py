@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', views.index, name='main'),
     path('vini/', views.vini, name='main'),
+	path('review/', views.review, name='review'),
 ]
