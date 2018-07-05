@@ -21,7 +21,19 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('main/', views.index, name='main'),
     path('dashboard/', views.index, name='main'),
-    path('vini/', views.vini, name='main'),
-	path('review/', views.review, name='review'),
+    path('registration/',views.registration, name='registration'),
+    path('review/',views.review, name='review'),
+    path('synonym/', views.synonym, name='synonym'),
+    path('reversetesting/', views.reversetesting, name='reversetesting'),
+    path('crosswordpuzzle/', views.crosswordpuzzle, name='crosswordpuzzle'),
+     path('wordsonline/', views.wordsonline, name='wordsonline'),
+      path('createnotes/', views.createnotes, name='createnotes'),
+       path('createtest/', views.createtest, name='createtest'),
+        path('sharingtest/', views.sharingtest, name='sharingtest'),
+         path('shareindividuals/', views.shareindividuals, name='shareindividuals'),
+          path('managesharedwords/', views.managesharedwords, name='managesharedwords'),
+           path('links/', views.links, name='links'),
+            path('alternativedictionary/', views.alternativedictionary, name='alternativedictionary'),
 ]
