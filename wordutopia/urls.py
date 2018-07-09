@@ -24,6 +24,7 @@ urlpatterns = [
     path('main/', views.index, name='main'),
     path('dashboard/', views.index, name='main'),
     path('registration/',views.registration, name='registration'),
+    path('addwords/',views.addwords, name='addwords'),
     path('review/',views.review, name='review'),
     path('synonym/', views.synonym, name='synonym'),
     path('reversetesting/', views.reversetesting, name='reversetesting'),

@@ -9,6 +9,9 @@ def dashboard(request):
 def registration(request):
     return render(request, 'registration.html',{})  
 
+def addwords(request):
+    return render(request, 'addwords.html',{})    
+
 def review(request):
     return render(request, 'review.html',{})
 
