@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from .forms import AddWordsForm
+from .models import AddWords
+from django.shortcuts import render, HttpResponseRedirect,redirect, get_object_or_404
 
 def index(request):
     return render(request, 'index.html',{})
@@ -10,8 +13,18 @@ def registration(request):
     return render(request, 'registration.html',{})  
 
 def addwords(request):
-    return render(request, 'addwords.html',{})    
-
+    if request.method == "POST":
+        print('first location')
+        addword = AddWords()
+        form = AddWordsForm(instance=addword, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('addwords')
+    else:
+        print('second location')
+        form = AddWordsForm()
+    return render(request, "Addwords.html", {'form':form})
+    
 def review(request):
     return render(request, 'review.html',{})
 

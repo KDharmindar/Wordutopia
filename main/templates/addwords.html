@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'new_project' %}">
+<form method="post" action="{% url 'addwords' %}">
   {{ form|crispy }}
   {% csrf_token %}
   <button class="btn btn-primary btn-block" type="submit">Add Word</button>

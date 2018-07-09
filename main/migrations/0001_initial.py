@@ -15,7 +15,6 @@ class Migration(migrations.Migration):
             name='AddWords',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('ID', models.IntegerField(null = True)),
                 ('UserID', models.CharField(max_length=250 , blank = True)),
                 ('Word', models.CharField(max_length=250 , blank = True)),
                 ('Pronunciation', models.CharField(max_length=250 , blank = True)),
