@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+
+{% block content %}
+
+<form method="post" action="{% url 'new_project' %}">
+  {{ form|crispy }}
+  {% csrf_token %}
+  <button class="btn btn-primary btn-block" type="submit">Add Word</button>
+</form>
+
+
+{% endblock %}
+
+ 
