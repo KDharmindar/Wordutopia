@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .forms import AddWordsForm
 from .models import AddWords
+from .models import CreateNotes
+from .forms import CreateNotesForm
+
 from django.shortcuts import render, HttpResponseRedirect,redirect, get_object_or_404
 
 def index(request):
@@ -41,7 +44,17 @@ def wordsonline(request):
     return render(request, 'wordsonline.html',{})    
 
 def createnotes(request):
-    return render(request, 'createnotes.html',{})    
+    if request.method == "POST":
+        print('first location')
+        createnote = CreateNotes()
+        form = CreateNotesForm(instance=createnote, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('createnotes')
+    else:
+        print('second location')
+        form = CreateNotesForm()
+    return render(request, 'createnotes.html',{'form':form})    
 
 def createtest(request):
     return render(request, 'createtest.html',{})    

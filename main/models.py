@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 
 
@@ -20,3 +21,7 @@ class AddWords(models.Model):
     WAppreance = models.CharField(max_length=250,default='')
     Score = models.IntegerField()
     Addition_Info = models.CharField(max_length=250,default='')
+
+class CreateNotes(models.Model):
+    Title = models.CharField(max_length=250, default='')
+    Content = models.CharField(max_length=500, default='')    
