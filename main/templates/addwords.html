@@ -6,11 +6,12 @@
 {% block content %}
 
 <form method="post" action="{% url 'addwords' %}">
-  {{ form|crispy }}
+   
+  <center>{{ form|crispy }}</center>
   {% csrf_token %}
-  <button class="btn btn-primary btn-block" type="submit">Add Word</button>
+  <center><button class="btn btn-primary btn-block"  type="submit">Add Word</button></center>
 </form>
-
+</Div>
 
 {% endblock %}
 
