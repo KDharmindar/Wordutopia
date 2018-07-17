@@ -5,13 +5,13 @@
 
 
 {% block content %}
-
+<Div class="container">
 <form method="post" action="{% url 'createnotes' %}">
-    {% csrf_token %}
+  {{ form|crispy }}
+  {% csrf_token %}
   
-  <center>{{ form|crispy }}</center>
-
-  <center><button class="btn btn-primary btn-block" type="submit">Create Notes</button></center>
+  <button class="btn btn-primary btn-block" type="submit">Create Notes</button>
+</Div>
 </form>
 
   {% endblock %}

@@ -4,6 +4,7 @@ from .models import AddWords
 from .models import CreateNotes
 from .forms import CreateNotesForm
 
+
 from django.shortcuts import render, HttpResponseRedirect,redirect, get_object_or_404
 
 def index(request):
@@ -11,6 +12,12 @@ def index(request):
 
 def dashboard(request):
     return render(request, 'dashboard.html',{})
+
+def home(request):
+    	return render(request, 'home.html')    
+
+def login(request):
+    	return render(request, 'login.html')    
 
 def registration(request):
     return render(request, 'registration.html',{})  

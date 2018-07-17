@@ -17,6 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from main import views
+from django.conf.urls import url, include
+from django.contrib import admin
+
+
+
+urlpatterns = [
+  
+    url(r'^login/$', views.login, name='login'),
+    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Here
+    url(r'^home', views.home, name='home'),
+]
 
 
 urlpatterns = [

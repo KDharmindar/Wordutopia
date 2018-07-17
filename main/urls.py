@@ -1,8 +1,13 @@
-from django.urls import path
+from django.conf.urls import url, include
+from django.contrib import admin
+from django.contrib.auth import views
+from .views import home
 
 from . import views
 
 urlpatterns = [
-    path('home/', views.index, name='home'),
-	path('review/', views.review, name='review'),
+  url(r'^admin/', admin.site.urls),
+    url(r'^login/$', views.login, name='login'),
+    url(r'^auth/', include('social_django.urls', namespace='social')),  # <- Here
+    url(r'^$', home, name='home'),
 ]
