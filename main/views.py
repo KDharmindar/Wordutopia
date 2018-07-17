@@ -6,6 +6,9 @@ from django.shortcuts import render, HttpResponseRedirect,redirect, get_object_o
 def index(request):
     return render(request, 'index.html',{})
 
+def profile(request):
+    return render(request, 'dashboard.html',{})
+
 def dashboard(request):
     return render(request, 'dashboard.html',{})
 

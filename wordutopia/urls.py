@@ -37,4 +37,6 @@ urlpatterns = [
     path('managesharedwords/', views.managesharedwords, name='managesharedwords'),
     path('links/', views.links, name='links'),
     path('alternativedictionary/', views.alternativedictionary, name='alternativedictionary'),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', views.profile, name="profile"),
 ]

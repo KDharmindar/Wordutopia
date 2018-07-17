@@ -35,6 +35,10 @@ INSTALLED_APPS = [
 
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -42,6 +46,8 @@ INSTALLED_APPS = [
     'main', 
     'crispy_forms',   
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -72,6 +78,17 @@ TEMPLATES = [
         },
     },
 ]
+
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
 
 WSGI_APPLICATION = 'wordutopia.wsgi.application'
 
@@ -125,3 +142,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,"main/assets"),)
+
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/accounts/profile'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login'
